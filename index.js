@@ -3,6 +3,7 @@ const fs = require("fs");
 const express = require("express");
 var requests = require("requests");
 const app = express();
+const port = process.env.PORT || 8000;
 
 const homeFile = fs.readFileSync("home.html","utf-8");
 
@@ -34,6 +35,6 @@ const replaceVal = (tempVal, orgVal) => {
         });
     })
 
-app.listen(8000, () => {
-    console.log("listening on 8000");
+app.listen(port, () => {
+    console.log(`listening on ${port}`);
 })
